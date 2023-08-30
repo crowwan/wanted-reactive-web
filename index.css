@@ -1,0 +1,145 @@
+:root {
+  --border-default: 1px solid #ebebeb;
+  --main-color: #ff565c;
+}
+
+/* Common */
+.container {
+  max-width: 1440px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+/* Header */
+
+.header {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  border-bottom: var(--border-default);
+}
+.logo {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 1rem;
+}
+
+.nav {
+  display: flex;
+  width: 805px;
+  justify-content: space-between;
+  margin-right: auto;
+  /* margin-left: 2.5rem; */
+  color: #ebebeb;
+  font-size: 14px;
+  padding: 0 1.5rem 0 0.5rem;
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}
+.btn__menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 16px;
+  cursor: pointer;
+}
+
+.btn__menu div {
+  width: 27px;
+  height: 2px;
+  background-color: black;
+}
+.btn__menu div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 27px;
+  height: 2px;
+  background-color: black;
+}
+.btn__menu div::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 27px;
+  height: 2px;
+  background-color: black;
+}
+
+/* Main */
+main {
+  background-color: #f2f2f2;
+  padding: 2rem;
+}
+.flex {
+  display: flex;
+  gap: 2rem;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: skyblue;
+  width: 74.125%;
+}
+.carrousel {
+  display: flex;
+  position: relative;
+  color: white;
+}
+.carrousel__item1 {
+  position: relative;
+  background-image: url(./asset/image1.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 581px;
+  padding: 0 50px;
+  filter: brightness(5px);
+  @media screen and (max-width: 480px) {
+    height: 441px;
+  }
+}
+.carrousel::after {
+  content: "←";
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  left: 0;
+  top: calc(50% - 25px);
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  background-color: #1d1f24;
+}
+.carrousel::before {
+  content: "→";
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  right: 0;
+  top: calc(50% - 25px);
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  background-color: #1d1f24;
+}
+.carrousel__item1::before {
+  content: "";
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+}
